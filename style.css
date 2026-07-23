@@ -102,7 +102,7 @@ html, body {
 .hero {
   width: 100%;
   min-height: calc(100vh - 70px);
-  background: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1600&auto=format&fit=crop') no-repeat center center/cover;
+  background: url('./images/heroImg.png') no-repeat center center/cover;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -221,5 +221,424 @@ html, body {
     width: 100%; /* Full width button on small mobile */
     text-align: center;
     padding: 14px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================= BROWSE THE RANGE STYLES ================= */
+.browse-range {
+  width: 100%;
+  padding: 60px 20px;
+  background-color: #ffffff;
+}
+
+.range-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 8px;
+}
+
+.section-header p {
+  font-size: 16px;
+  color: #666666;
+}
+
+/* Grid Layout */
+.range-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.range-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.range-card .img-box {
+  width: 100%;
+  height: 480px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.range-card .img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.4s ease;
+}
+
+/* Hover Effect */
+.range-card:hover .img-box img {
+  transform: scale(1.04);
+}
+
+.range-card h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333333;
+  text-align: center;
+}
+
+/* ================= RESPONSIVE FIXES (Tablet & 390px Mobile) ================= */
+@media (max-width: 992px) {
+  .browse-range {
+    padding: 40px 16px;
+  }
+
+  .range-card .img-box {
+    height: 380px;
+  }
+
+  .section-header h2 {
+    font-size: 28px;
+  }
+
+  .range-card h3 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .range-grid {
+    grid-template-columns: 1fr; /* Mobile par vertically stack honge */
+    gap: 30px;
+  }
+
+  .range-card .img-box {
+    height: 350px;
+  }
+}
+
+@media (max-width: 390px) {
+  .browse-range {
+    padding: 30px 12px;
+  }
+
+  .section-header h2 {
+    font-size: 22px;
+  }
+
+  .section-header p {
+    font-size: 13px;
+  }
+
+  .range-card .img-box {
+    height: 280px; /* 390px screen par extra tight height space prevent karne ke liye */
+  }
+
+  .range-card h3 {
+    font-size: 18px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================= OUR PRODUCTS STYLES ================= */
+.products-section {
+  width: 100%;
+  padding: 40px 20px 60px;
+  background-color: #ffffff;
+}
+
+.products-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.products-section .section-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: #3a3a3a;
+  margin-bottom: 32px;
+}
+
+/* Grid Layout */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px 24px;
+}
+
+.product-card {
+  background-color: #f4f5f7;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-img {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Badges: Discount & New */
+.badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.badge.discount {
+  background-color: #e97171;
+}
+
+.badge.new {
+  background-color: #2ec1ac;
+}
+
+/* ================= HOVER OVERLAY EFFECT ================= */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(58, 58, 58, 0.72); /* Exact Figma dark tone */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+}
+
+.product-card:hover .overlay {
+  opacity: 1; /* Mouse hover karne par dikhega */
+}
+
+.btn-add-cart {
+  background-color: #ffffff;
+  color: #b88e2f;
+  border: none;
+  padding: 12px 36px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-add-cart:hover {
+  background-color: #b88e2f;
+  color: #ffffff;
+}
+
+.overlay-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.overlay-actions span {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s;
+}
+
+.overlay-actions span:hover {
+  color: #b88e2f;
+}
+
+/* Product Details */
+.product-info {
+  padding: 16px;
+  background-color: #f4f5f7;
+  flex-grow: 1;
+}
+
+.product-info h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #3a3a3a;
+  margin-bottom: 4px;
+}
+
+.product-info .subtitle {
+  font-size: 14px;
+  color: #898989;
+  margin-bottom: 8px;
+}
+
+.price-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.current-price {
+  font-size: 16px;
+  font-weight: 600;
+  color: #3a3a3a;
+}
+
+.old-price {
+  font-size: 13px;
+  color: #b0b0b0;
+  text-decoration: line-through;
+}
+
+/* Show More Button */
+.show-more-box {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.btn-show-more {
+  display: inline-block;
+  border: 1px solid #b88e2f;
+  color: #b88e2f;
+  background-color: transparent;
+  padding: 12px 70px;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-show-more:hover {
+  background-color: #b88e2f;
+  color: #ffffff;
+}
+
+/* ================= RESPONSIVE FIXES (390px Mobile & Tablets) ================= */
+@media (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr; /* Single column on 390px mobile */
+  }
+
+  .products-section .section-title {
+    font-size: 28px;
+  }
+
+  .product-img {
+    height: 280px;
+  }
+
+  /* Mobile screen par touch visibility facilitate karne ke liye overlay active look */
+  .overlay-actions {
+    gap: 12px;
+    font-size: 12px;
   }
 }

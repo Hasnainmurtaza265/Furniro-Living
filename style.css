@@ -1,0 +1,225 @@
+/* ================= GLOBAL RESET & PREVENT OVERFLOW ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* Side par blank space / unwanted scrolling ko khatam karta hai */
+}
+
+:root {
+  --primary-color: #B88E2F;
+  --bg-light-gold: #FFF3E3;
+  --text-dark: #333333;
+  --text-gray: #666666;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  width: 100%;
+  height: 70px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 16px; /* Small screens par gaps safe rakhne ke liye */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 700;
+  color: #000000;
+  white-space: nowrap; /* Logo text break na ho */
+}
+
+.logo svg {
+  width: 26px;
+  height: 18px;
+}
+
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 500;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: var(--primary-color);
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Mobile par gap kam kar diya hai taakay wrap na ho */
+}
+
+.nav-icons a {
+  color: #000000;
+  font-size: 16px;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #000000;
+  padding: 4px;
+}
+
+/* ================= HERO SECTION ================= */
+.hero {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  background: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1600&auto=format&fit=crop') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 40px 5%;
+}
+
+.hero-card {
+  background-color: var(--bg-light-gold);
+  padding: 35px 30px;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+}
+
+.hero-card .subtitle {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #333333;
+  margin-bottom: 8px;
+}
+
+.hero-card .title {
+  font-size: 36px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+}
+
+.hero-card .description {
+  font-size: 14px;
+  color: var(--text-gray);
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 16px 36px;
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+/* ================= MOBILE FIXES (390px & Under) ================= */
+@media (max-width: 850px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: #ffffff;
+    transition: left 0.3s ease;
+    z-index: 999;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 25px;
+    align-items: center;
+  }
+
+  .nav-menu a {
+    font-size: 18px;
+  }
+
+  .hero {
+    justify-content: center;
+    padding: 30px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 18px; /* Extra small screens par logo font adjust */
+  }
+
+  .nav-icons {
+    gap: 12px; /* Icons padding fixed for 390px screens */
+  }
+
+  .nav-icons a {
+    font-size: 15px;
+  }
+
+  .hero-card {
+    padding: 25px 20px;
+  }
+
+  .hero-card .title {
+    font-size: 26px; /* Break overflow text */
+  }
+
+  .hero-card .description {
+    font-size: 13px;
+  }
+
+  .btn-primary {
+    width: 100%; /* Full width button on small mobile */
+    text-align: center;
+    padding: 14px;
+  }
+}

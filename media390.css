@@ -1,0 +1,24 @@
+@media (max-width: 390px) {
+  .browse-range {
+    padding: 30px 12px;
+  }
+
+  .section-header h2 {
+    font-size: 22px;
+  }
+
+  .section-header p {
+    font-size: 13px;
+  }
+
+  .range-card .img-box {
+    height: 280px; 
+  }
+
+  .range-card h3 {
+    font-size: 18px;
+  }
+
+
+
+}

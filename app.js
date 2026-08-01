@@ -2,6 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const hamburgerBtn = document.getElementById('hamburgerBtn');
   const navMenu = document.getElementById('navMenu');
 
+
+
+
+
+
+
+
   // Mobile Menu Toggle
   hamburgerBtn.addEventListener('click', () => {
     navMenu.classList.toggle('active');
@@ -29,6 +36,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+
+
+
+
+
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -153,3 +168,86 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+
+// STATIC NAV BAR!
+
+// Dynamic Navbar HTML Definition
+const navbarHTML = `
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="https://raw.githubusercontent.com/TajammalMaqbool/Furniro-E-commerce-Website/main/images/logo.png" alt="Furniro Logo" onerror="this.style.display='none'">
+        <span>Furniro</span>
+      </a>
+      <nav class="nav-links" id="navMenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li> <!-- Shop page link -->
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-icons">
+        <a href="#"><i class="fa-regular fa-user"></i></a>
+        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a href="#"><i class="fa-regular fa-heart"></i></a>
+        <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+      </div>
+      <button class="hamburger" id="hamburgerBtn">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+`;
+
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. DYNAMIC HEADER INJECTION
+  const headerContainer = document.getElementById('dynamic-header');
+  if (headerContainer) {
+    headerContainer.innerHTML = navbarHTML;
+  }
+
+  // 2. ACTIVE NAV LINK HIGHLIGHT
+  const currentPath = window.location.pathname.split("/").pop() || "index.html";
+  const navLinks = document.querySelectorAll('.nav-links a');
+  
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPath) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+
+  // 3. MOBILE HAMBURGER TOGGLE
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const navMenu = document.getElementById('navMenu');
+
+  if (hamburgerBtn && navMenu) {
+    hamburgerBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  }
+
+  // 4. HOME PAGE BUTTONS TO SHOP REDIRECT (JS HANDLE)
+  // "Show More" Button Listener
+  const showMoreBtns = document.querySelectorAll('.show-more-btn, .outline-btn');
+  showMoreBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.location.href = 'shop.html';
+    });
+  });
+
+  // "BUY NOW" Hero Button Listener
+  const buyNowBtns = document.querySelectorAll('.buy-now-btn, .primary-btn');
+  buyNowBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.location.href = 'shop.html';
+    });
+  });
+});
+   

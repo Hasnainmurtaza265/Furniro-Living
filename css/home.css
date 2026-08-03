@@ -394,3 +394,184 @@
     display: none;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.swiper.products-slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.products-slider-list {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.4s ease-in-out;
+  will-change: transform;
+}
+
+.room-slide {
+  min-width: 400px;
+  height: 580px;
+  position: relative;
+  flex-shrink: 0;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.room-slide.active-slide {
+  opacity: 1;
+}
+
+.room-slide img.room-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Figma Room Label Card Overlay */
+.room-overlay {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  display: flex;
+  align-items: flex-end;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.room-slide.active-slide .room-overlay {
+  opacity: 1;
+}
+
+.room-details {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  padding: 20px 24px;
+}
+
+.room-cat {
+  font-size: 14px;
+  color: #616161;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.room-title {
+  font-size: 24px;
+  color: #3a3a3a;
+  font-weight: 600;
+  margin: 0;
+}
+
+.room-arrow-btn {
+  background: #b88e2f;
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  cursor: pointer;
+}
+
+/* Navigation Buttons Styling */
+.products-slider-navigation button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: #ffffff;
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.products-slider-next-slide {
+  right: 20px;
+}
+
+.products-slider-prev-slide {
+  left: 20px;
+}
+
+/* Container Clip Fix */
+.products-slider {
+  width: 100%;
+  overflow: hidden;
+  /* Canvas se baahar images ko hide karne ke liye */
+  position: relative;
+}
+
+/* Slider Track */
+.products-slider-list {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.4s ease-in-out;
+  will-change: transform;
+}
+
+/* Slide item exact dimensions */
+.room-slide {
+  width: 400px;
+  /* Fixed width so it moves predictably */
+  min-width: 400px;
+  max-width: 400px;
+  height: 580px;
+  position: relative;
+  flex-shrink: 0;
+  /* Image ko squeeze hone se rokta hai */
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.room-slide.active-slide {
+  opacity: 1;
+}
+
+.room-slide img.room-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Dots */
+.dots {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+}
+
+.dot-item {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #d8d8d8;
+  cursor: pointer;
+}
+
+.dot-item.active-dot {
+  background: #b88e2f;
+  outline: 2px solid #b88e2f;
+  outline-offset: 3px;
+}

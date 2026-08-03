@@ -1,31 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="overflow" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
     />
+
     <link rel="icon" href="img/logo/logo.png" />
+    <link rel="stylesheet" href="css/cart.css" />
     <link rel="stylesheet" href="css/general.css" />
-    <link rel="stylesheet" href="css/shop.css" />
     <link rel="stylesheet" href="css/queriese.css" />
     <link
       rel="stylesheet"
       href="node_modules/izitoast/dist/css/iziToast.min.css"
     />
     <title>furniro &mdash; furniture</title>
-    <script type="module" src="js/controllers/shopController.js"></script>
+    <script type="module" src="js/controllers/cartController.js"></script>
   </head>
   <body>
-    <form class="modal-container"></form>
     <div class="test">
       <header class="header">
-        <a class="logo" href="./index.html">
+        <a class="logo" href="home.html">
           <div class="logo-box">
             <div class="logo-img-box">
               <img
@@ -40,24 +41,24 @@
           <nav class="nav-pages">
             <ul class="nav-list mobile-nav-list">
               <li class="nav-list-li">
-                <a class="nav-list-item mobile-nav-list-item" href="./index.html"
+                <a class="nav-list-item mobile-nav-list-item" href="home.html"
                   >Home</a
                 >
               </li>
               <li class="nav-list-li">
-                <a class="nav-list-item mobile-nav-list-item" href="./shop.html"
+                <a class="nav-list-item mobile-nav-list-item" href="shop.html"
                   >Shop</a
                 >
               </li>
               <li class="nav-list-li">
-                <a class="nav-list-item mobile-nav-list-item" href="./blog.html"
+                <a class="nav-list-item mobile-nav-list-item" href="blog.html"
                   >blog</a
                 >
               </li>
               <li class="nav-list-li">
                 <a
                   class="nav-list-item mobile-nav-list-item"
-                  href="./contact.html"
+                  href="contact.html"
                   >contact</a
                 >
               </li>
@@ -66,21 +67,21 @@
           <div class="header-icon">
             <ul class="header-icon-list">
               <li>
-                <a href="./login.html">
+                <a href="login.html">
                   <img
-                    src="./img/icons/user-header.svg"
+                    src="img/icons/user-header.svg"
                     alt="icon of a a user "
                   />
                 </a>
               </li>
               <li>
-                <a href="./search.html">
+                <a href="search.html">
                   <img src="img/icons/header-search.svg" alt=" a search icon" />
                 </a>
               </li>
 
               <li>
-                <a href="./wishlist.html">
+                <a href="wishlist.html">
                   <img src="img/icons/header-heart.svg" alt=" a heart icon" />
                 </a>
               </li>
@@ -100,34 +101,34 @@
         <nav class="nav-pages desktop-nav-pg">
           <ul class="nav-list">
             <li class="nav-list-li">
-              <a class="nav-list-item" href="./index.html">Home</a>
-            </li>
-            <li class="nav-list-li active">
-              <a class="nav-list-item" href="./shop.html">Shop</a>
+              <a class="nav-list-item" href="home.html">Home</a>
             </li>
             <li class="nav-list-li">
-              <a class="nav-list-item" href="./blog.html">blog</a>
+              <a class="nav-list-item" href="shop.html">Shop</a>
             </li>
             <li class="nav-list-li">
-              <a class="nav-list-item" href="./contact.html">contact</a>
+              <a class="nav-list-item" href="blog.html">blog</a>
+            </li>
+            <li class="nav-list-li">
+              <a class="nav-list-item" href="contact.html">contact</a>
             </li>
           </ul>
         </nav>
         <div class="header-icon desktop-header-icon">
           <ul class="header-icon-list">
             <li>
-              <a href="./login.html">
+              <a href="login.html">
                 <img src="img/icons/user-header.svg" alt="icon of a a user " />
               </a>
             </li>
             <li>
-              <a href="./search.html">
+              <a href="search.html">
                 <img src="img/icons/header-search.svg" alt=" a search icon" />
               </a>
             </li>
 
             <li>
-              <a href="./wishlist.html">
+              <a href="wishlist.html">
                 <img src="img/icons/header-heart.svg" alt=" a heart icon" />
               </a>
             </li>
@@ -182,28 +183,41 @@
     <main>
       <section class="pages-bg menu-fade-flag">
         <div class="pages-bg-container">
-          <!-- <img src="/img/shop logo.png" alt=" logo of furniro" /> -->
-          <h2 class="pages-bg-heading">Shop</h2>
+          <h2 class="pages-bg-heading">Cart</h2>
           <div class="home-path">
             <span class="path past">Home</span>
             <img
               src="img/icons/arrow-to-right.svg"
               alt=" an arrow to right icon"
             />
-            <span class="path now">Shop</span>
+            <span class="path now">Cart</span>
           </div>
         </div>
       </section>
-      <div class="product-fliters"></div>
-      <section class="product-section">
-        <div class="card-container"></div>
-        <div class="card-inline-container"></div>
+      <section class="cart-section">
+        <div class="cart-container">
+          <div class="cart-table">
+            <div class="row-one">
+              <p class="cart-table-item">product</p>
+              <p class="cart-table-item">price</p>
+              <p class="cart-table-item">Quantity</p>
+              <p class="cart-table-item">Subtotal</p>
+            </div>
+            <p class="cart-message"></p>
+            <div class="wrapper"></div>
+          </div>
+          <aside class="aside-cart">
+            <h3 class="aside-title">Cart Totals</h3>
+            <div class="aside-item">
+              <p class="aside-cart-title">total</p>
+              <span class="aside-cart-price gold"></span>
+            </div>
+            <div class="align-center">
+              <a class="btn-checout" href="#"> Checkout</a>
+            </div>
+          </aside>
+        </div>
       </section>
-      <div class="pagination">
-        <ul class="pagination-list">
-          <!-- <li class="pagination-item fill-pag">1</li> -->
-        </ul>
-      </div>
       <section class="advantages-section">
         <div class="advantages-grid">
           <div class="advantage-items">
@@ -244,7 +258,7 @@
       <div class="border-pad">
         <div class="footer-container">
           <div class="logo-address">
-            <a class="logo-txt" href="./index.html"> Furniro </a>
+            <a class="logo-txt" href="home.html"> Furniro </a>
 
             <address class="address">
               400 University Drive Suite 200 Coral <br />
@@ -256,16 +270,16 @@
             <ul class="footer-list">
               <p class="footer-heading">Links</p>
               <li class="nav-list-li">
-                <a class="nav-list-item" href="./index.html"> Home</a>
+                <a class="nav-list-item" href="home.html"> Home</a>
               </li>
               <li class="nav-list-li">
-                <a class="nav-list-item" href="./shop.html"> Shop</a>
+                <a class="nav-list-item" href="shop.html"> Shop</a>
               </li>
               <li class="nav-list-li">
-                <a class="nav-list-item" href="./blog.html"> Blog</a>
+                <a class="nav-list-item" href="blog.html"> Blog</a>
               </li>
               <li class="nav-list-li">
-                <a class="nav-list-item" href="./contact.html"> Contact</a>
+                <a class="nav-list-item" href="contact.html"> Contact</a>
               </li>
             </ul>
           </div>
